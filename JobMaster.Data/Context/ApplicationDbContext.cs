@@ -13,11 +13,11 @@ namespace JobMaster.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //base.OnModelCreating(modelBuilder);
-            //modelBuilder.Entity<User>().
-            //new UserMap(modelBuilder.Entity<User>());
-            //new UserDetailMap(modelBuilder.Entity<UserDetail>());
             modelBuilder.ApplyConfiguration(new UserMap());
+            modelBuilder.ApplyConfiguration(new UserDetailMap());
+            modelBuilder.ApplyConfiguration(new RoleMap());
+            modelBuilder.ApplyConfiguration(new UserRoleMap());
+            modelBuilder.ApplyConfiguration(new UserPhoneMap());
         }
     }
 }

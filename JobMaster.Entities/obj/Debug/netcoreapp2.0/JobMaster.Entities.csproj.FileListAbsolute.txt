@@ -7,3 +7,12 @@ E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Entities\obj\Debug\netcor
 E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Entities\obj\Debug\netcoreapp2.0\JobMaster.Entities.dll
 E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Entities\obj\Debug\netcoreapp2.0\JobMaster.Entities.pdb
 E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Entities\obj\Debug\netcoreapp2.0\JobMaster.Entities.csprojResolveAssemblyReference.cache
+E:\Projects\JobPortal\JobMaster.Entities\bin\Debug\netcoreapp2.0\JobMaster.Entities.deps.json
+E:\Projects\JobPortal\JobMaster.Entities\bin\Debug\netcoreapp2.0\JobMaster.Entities.dll
+E:\Projects\JobPortal\JobMaster.Entities\bin\Debug\netcoreapp2.0\JobMaster.Entities.pdb
+E:\Projects\JobPortal\JobMaster.Entities\obj\Debug\netcoreapp2.0\JobMaster.Entities.csprojResolveAssemblyReference.cache
+E:\Projects\JobPortal\JobMaster.Entities\obj\Debug\netcoreapp2.0\JobMaster.Entities.csproj.CoreCompileInputs.cache
+E:\Projects\JobPortal\JobMaster.Entities\obj\Debug\netcoreapp2.0\JobMaster.Entities.AssemblyInfoInputs.cache
+E:\Projects\JobPortal\JobMaster.Entities\obj\Debug\netcoreapp2.0\JobMaster.Entities.AssemblyInfo.cs
+E:\Projects\JobPortal\JobMaster.Entities\obj\Debug\netcoreapp2.0\JobMaster.Entities.dll
+E:\Projects\JobPortal\JobMaster.Entities\obj\Debug\netcoreapp2.0\JobMaster.Entities.pdb
