@@ -8,7 +8,7 @@ namespace JobMaster
     {
         public string JobName { get; set; }
         public string Description { get; set; }
-        public int Salary { get; set; }
+        public int Salary { get; set; } 
         public int ParentId { get; set; }
 
     }
