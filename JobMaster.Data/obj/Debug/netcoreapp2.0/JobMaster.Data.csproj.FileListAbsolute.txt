@@ -1,0 +1,21 @@
+E:\Projects\JobPortal\JobMaster\JobMaster.Data\bin\Debug\netcoreapp2.0\JobMaster.Data.deps.json
+E:\Projects\JobPortal\JobMaster\JobMaster.Data\bin\Debug\netcoreapp2.0\JobMaster.Data.dll
+E:\Projects\JobPortal\JobMaster\JobMaster.Data\obj\Debug\netcoreapp2.0\JobMaster.Data.csproj.CoreCompileInputs.cache
+E:\Projects\JobPortal\JobMaster\JobMaster.Data\obj\Debug\netcoreapp2.0\JobMaster.Data.AssemblyInfoInputs.cache
+E:\Projects\JobPortal\JobMaster\JobMaster.Data\obj\Debug\netcoreapp2.0\JobMaster.Data.AssemblyInfo.cs
+E:\Projects\JobPortal\JobMaster\JobMaster.Data\bin\Debug\netcoreapp2.0\JobMaster.Data.pdb
+E:\Projects\JobPortal\JobMaster\JobMaster.Data\obj\Debug\netcoreapp2.0\JobMaster.Data.dll
+E:\Projects\JobPortal\JobMaster\JobMaster.Data\obj\Debug\netcoreapp2.0\JobMaster.Data.pdb
+E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Data\obj\Debug\netcoreapp2.0\JobMaster.Data.csprojResolveAssemblyReference.cache
+E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Data\obj\Debug\netcoreapp2.0\JobMaster.Data.csproj.CoreCompileInputs.cache
+E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Data\obj\Debug\netcoreapp2.0\JobMaster.Data.AssemblyInfoInputs.cache
+E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Data\obj\Debug\netcoreapp2.0\JobMaster.Data.AssemblyInfo.cs
+E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Data\obj\Debug\netcoreapp2.0\JobMaster.Data.dll
+E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Data\obj\Debug\netcoreapp2.0\JobMaster.Data.pdb
+E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Data\bin\Debug\netcoreapp2.0\JobMaster.Data.deps.json
+E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Data\bin\Debug\netcoreapp2.0\JobMaster.Data.dll
+E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Data\bin\Debug\netcoreapp2.0\JobMaster.Data.pdb
+E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Data\bin\Debug\netcoreapp2.0\JobMaster.Entities.dll
+E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Data\bin\Debug\netcoreapp2.0\JobMaster.Entities.pdb
+E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Data\bin\Debug\netcoreapp2.0\JobMaster.Data.runtimeconfig.json
+E:\Projects\Asp.net core\JobPortal\JobMaster\JobMaster.Data\bin\Debug\netcoreapp2.0\JobMaster.Data.runtimeconfig.dev.json
