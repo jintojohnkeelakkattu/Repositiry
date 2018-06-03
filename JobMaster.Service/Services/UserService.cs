@@ -1,7 +1,10 @@
 ﻿
 
 using JobMaster.Data;
+using JobMaster.Service.ViewModels;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace JobMaster.Service
 {
@@ -28,9 +31,27 @@ namespace JobMaster.Service
             return _dbContext.Users;
         }
 
-        public void InsertUser(User user)
+        public async Task CreateUser(RegisterUser registerUser)
         {
-            throw new System.NotImplementedException();
+            var isExistingUser = _dbContext.Users.Any(r => r.UserName == registerUser.UserName);
+
+            if (isExistingUser)
+            {
+                throw new ActionNotCompletedException($"{registerUser.UserName} already exist.");
+            }
+
+            HashedPassword hashedPassword = new HashedPassword(registerUser.Password, 2);
+
+            User user = new User()
+            {
+                UserName = registerUser.UserName,
+                HashedPassword = hashedPassword.Hash,
+                Salt = hashedPassword.Salt,
+                Email = registerUser.Email
+            };
+
+            _dbContext.Users.Add(user);
+           await  _dbContext.SaveChangesAsync();
         }
 
         public void UpdateUser(User user)
