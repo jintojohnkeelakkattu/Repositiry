@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace JobMaster.Data
+namespace JobMaster
 {
-    class JobDetailMap
+    public enum Country
     {
+        India = 0,
+        Australia = 1
     }
 }
