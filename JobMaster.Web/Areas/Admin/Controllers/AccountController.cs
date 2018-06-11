@@ -73,7 +73,7 @@ namespace JobMaster.Web.Areas.Admin.Controllers
                         ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
 
                         await HttpContext.SignInAsync(principal);
-                        return RedirectToAction("Index", "Welcome", new { Area = "Admin" });
+                        return RedirectToAction("Index", "Home", new { Area = "Admin" });
                     }
                     else
                     {
