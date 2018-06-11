@@ -664,7 +664,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nayas\\.nuget\\packages\\": {},
+    "C:\\Users\\Aswathy V S\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -673,17 +673,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\Projects\\JobPortal\\JobPortal\\JobMaster.Entities\\JobMaster.Entities.csproj",
+      "projectUniqueName": "G:\\LatestJobPortal\\JobPortal\\JobMaster.Entities\\JobMaster.Entities.csproj",
       "projectName": "JobMaster.Entities",
-      "projectPath": "E:\\Projects\\JobPortal\\JobPortal\\JobMaster.Entities\\JobMaster.Entities.csproj",
-      "packagesPath": "C:\\Users\\Nayas\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\JobPortal\\JobPortal\\JobMaster.Entities\\obj\\",
+      "projectPath": "G:\\LatestJobPortal\\JobPortal\\JobMaster.Entities\\JobMaster.Entities.csproj",
+      "packagesPath": "C:\\Users\\Aswathy V S\\.nuget\\packages\\",
+      "outputPath": "G:\\LatestJobPortal\\JobPortal\\JobMaster.Entities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Nayas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Aswathy V S\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -710,7 +710,7 @@
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.0",
+            "version": "2.0",
             "autoReferenced": true
           }
         },

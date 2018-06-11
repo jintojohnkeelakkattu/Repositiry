@@ -3576,7 +3576,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nayas\\.nuget\\packages\\": {},
+    "C:\\Users\\Aswathy V S\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -3585,17 +3585,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\Projects\\JobPortal\\JobPortal\\JobMaster.Data\\JobMaster.Data.csproj",
+      "projectUniqueName": "G:\\LatestJobPortal\\JobPortal\\JobMaster.Data\\JobMaster.Data.csproj",
       "projectName": "JobMaster.Data",
-      "projectPath": "E:\\Projects\\JobPortal\\JobPortal\\JobMaster.Data\\JobMaster.Data.csproj",
-      "packagesPath": "C:\\Users\\Nayas\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\JobPortal\\JobPortal\\JobMaster.Data\\obj\\",
+      "projectPath": "G:\\LatestJobPortal\\JobPortal\\JobMaster.Data\\JobMaster.Data.csproj",
+      "packagesPath": "C:\\Users\\Aswathy V S\\.nuget\\packages\\",
+      "outputPath": "G:\\LatestJobPortal\\JobPortal\\JobMaster.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Nayas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Aswathy V S\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3608,8 +3608,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "E:\\Projects\\JobPortal\\JobPortal\\JobMaster.Entities\\JobMaster.Entities.csproj": {
-              "projectPath": "E:\\Projects\\JobPortal\\JobPortal\\JobMaster.Entities\\JobMaster.Entities.csproj"
+            "G:\\LatestJobPortal\\JobPortal\\JobMaster.Entities\\JobMaster.Entities.csproj": {
+              "projectPath": "G:\\LatestJobPortal\\JobPortal\\JobMaster.Entities\\JobMaster.Entities.csproj"
             }
           }
         }
@@ -3630,7 +3630,7 @@
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.0",
+            "version": "2.0",
             "autoReferenced": true
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {

@@ -18,8 +18,8 @@ namespace JobMaster.Web.Controllers
         }
         public IActionResult Index()
         {
-            var ddd = _userService.GetUsers();
-            return View();
+            var jobs = _userService.GetTopJobs();
+            return View(jobs);
         }
 
         public IActionResult About()
