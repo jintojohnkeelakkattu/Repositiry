@@ -33,3 +33,23 @@
         display: none;
     }
 }
+.search-container .content {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.search-container .form-control {
+    padding: 0 40px;
+    border: 1px solid transparent;
+}
+.form-control {
+    background-color: #FFF;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075);
+    color: #444;
+    display: block;
+    height: 55px;
+    padding: 15px 10px;
+    width: 100%;
+}

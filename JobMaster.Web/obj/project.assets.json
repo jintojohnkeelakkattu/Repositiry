@@ -13303,11 +13303,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "G:\\WORKS\\JobPortalGit\\JobPortal\\JobMaster.Web\\JobMaster.Web.csproj",
+      "projectUniqueName": "G:\\LatestJobPortal\\JobPortal\\JobMaster.Web\\JobMaster.Web.csproj",
       "projectName": "JobMaster.Web",
-      "projectPath": "G:\\WORKS\\JobPortalGit\\JobPortal\\JobMaster.Web\\JobMaster.Web.csproj",
+      "projectPath": "G:\\LatestJobPortal\\JobPortal\\JobMaster.Web\\JobMaster.Web.csproj",
       "packagesPath": "C:\\Users\\Aswathy V S\\.nuget\\packages\\",
-      "outputPath": "G:\\WORKS\\JobPortalGit\\JobPortal\\JobMaster.Web\\obj\\",
+      "outputPath": "G:\\LatestJobPortal\\JobPortal\\JobMaster.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13326,8 +13326,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "G:\\WORKS\\JobPortalGit\\JobPortal\\JobMaster.Service\\JobMaster.Service.csproj": {
-              "projectPath": "G:\\WORKS\\JobPortalGit\\JobPortal\\JobMaster.Service\\JobMaster.Service.csproj"
+            "G:\\LatestJobPortal\\JobPortal\\JobMaster.Service\\JobMaster.Service.csproj": {
+              "projectPath": "G:\\LatestJobPortal\\JobPortal\\JobMaster.Service\\JobMaster.Service.csproj"
             }
           }
         }

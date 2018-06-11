@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using JobMaster.Data;
 using JobMaster.Service;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace JobMaster.Web
 {
@@ -23,8 +25,16 @@ namespace JobMaster.Web
         {
             var connectionString = Configuration.GetConnectionString("JobPortalDatabase");
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString, x => x.MigrationsAssembly("JobMaster.Data")));
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                   .AddCookie(options =>
+                   {
+                       options.LoginPath = "/admin/account/login/";
+
+                   });
             services.AddMvc();
 
+           
             // Register application services.
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserDetailService, UserDetailService>();
@@ -49,6 +59,10 @@ namespace JobMaster.Web
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "area",
+                    template: "{area:exists}/{controller=Account}/{action=Index}/{id?}");
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

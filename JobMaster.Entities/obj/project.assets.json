@@ -673,11 +673,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "G:\\WORKS\\JobPortalGit\\JobPortal\\JobMaster.Entities\\JobMaster.Entities.csproj",
+      "projectUniqueName": "G:\\LatestJobPortal\\JobPortal\\JobMaster.Entities\\JobMaster.Entities.csproj",
       "projectName": "JobMaster.Entities",
-      "projectPath": "G:\\WORKS\\JobPortalGit\\JobPortal\\JobMaster.Entities\\JobMaster.Entities.csproj",
+      "projectPath": "G:\\LatestJobPortal\\JobPortal\\JobMaster.Entities\\JobMaster.Entities.csproj",
       "packagesPath": "C:\\Users\\Aswathy V S\\.nuget\\packages\\",
-      "outputPath": "G:\\WORKS\\JobPortalGit\\JobPortal\\JobMaster.Entities\\obj\\",
+      "outputPath": "G:\\LatestJobPortal\\JobPortal\\JobMaster.Entities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
