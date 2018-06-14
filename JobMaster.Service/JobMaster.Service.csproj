@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JobMaster.Data\JobMaster.Data.csproj" />
+    <ProjectReference Include="..\JobMaster.Repository\JobMaster.Repository.csproj" />
   </ItemGroup>
 
 </Project>

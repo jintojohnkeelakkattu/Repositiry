@@ -6,16 +6,17 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace JobMaster.Service
 {
     public class UserService : IUserService
     {
-        private readonly ApplicationDbContext _dbContext;
+        private readonly IRepository _repository;
 
-        public UserService(ApplicationDbContext dbContext)
+        public UserService(IRepository repository)
         {
-            _dbContext = dbContext;
+            _repository = repository;
         }
         public void DeleteUser(long id)
         {
@@ -29,12 +30,12 @@ namespace JobMaster.Service
 
         public IEnumerable<User> GetUsers()
         {
-            return _dbContext.Users;
+            return _repository.GetAll<User>();
         }
 
         public async Task CreateUser(RegisterUser registerUser)
         {
-            var isExistingUser = _dbContext.Users.Any(r => r.UserName == registerUser.UserName);
+            var isExistingUser = _repository.GetAll<User>().Any(r => r.UserName == registerUser.UserName);
 
             if (isExistingUser)
             {
@@ -50,9 +51,15 @@ namespace JobMaster.Service
                 Salt = hashedPassword.Salt,
                 Email = registerUser.Email
             };
+            try
+            {
+                await _repository.Save<User>(user);
+            }catch(Exception ex)
+            {
 
-            _dbContext.Users.Add(user);
-           await  _dbContext.SaveChangesAsync();
+            }
+           // _dbContext.Users.Add(user);
+           //await  _dbContext.SaveChangesAsync();
         }
 
         public void UpdateUser(User user)
@@ -62,12 +69,12 @@ namespace JobMaster.Service
 
         public async Task<bool> ValidateUser(LoginUser loginUser)
         {
-            var isUserExist = _dbContext.Users.Any(r => r.UserName == loginUser.UserName);
+            var isUserExist = _repository.GetAll<User>().Any(r => r.UserName == loginUser.UserName);
             if (!isUserExist)
             {
                 throw new ActionNotCompletedException($"{loginUser.UserName} doesn't exist.");
             }
-            var user = await _dbContext.Users.SingleAsync(u => u.UserName == loginUser.UserName);
+            var user = await _repository.GetAll<User>().SingleAsync(u => u.UserName == loginUser.UserName);
             HashedPassword hp = new HashedPassword(user.Salt, user.HashedPassword, 2);
 
             if (!hp.CheckPassword(loginUser.Password))
@@ -78,27 +85,27 @@ namespace JobMaster.Service
             return true;
         }
 
-        public List<string> GetUserRoles(string userName)
-        {
-            var user = _dbContext.Users.Single(r => r.UserName == userName);
-            var userRoles = _dbContext.UserRoles
-                .Join(_dbContext.Roles, u => u.RoleId, r => r.Id, (u, r) =>
-                   new
-                   {
-                       r.Name,
-                       u.UserId
-                   }).Where(r => r.UserId == user.Id).Select(t => t.Name)
+        //public List<string> GetUserRoles(string userName)
+        //{
+        //    var user = _dbContext.Users.Single(r => r.UserName == userName);
+        //    var userRoles = _dbContext.UserRoles
+        //        .Join(_dbContext.Roles, u => u.RoleId, r => r.Id, (u, r) =>
+        //           new
+        //           {
+        //               r.Name,
+        //               u.UserId
+        //           }).Where(r => r.UserId == user.Id).Select(t => t.Name)
 
-                   ;
-            if (userRoles != null && userRoles.Count() > 0)
-                return (List<string>)userRoles;
-            else return null;
-        }
+        //           ;
+        //    if (userRoles != null && userRoles.Count() > 0)
+        //        return (List<string>)userRoles;
+        //    else return null;
+        //}
 
-        public IEnumerable<Job> GetTopJobs()
-        {
-            var jobs = _dbContext.Jobs.ToList();
-            return jobs;
-        }
+        //public IEnumerable<Job> GetTopJobs()
+        //{
+        //    var jobs = _dbContext.Jobs.ToList();
+        //    return jobs;
+        //}
     }
 }

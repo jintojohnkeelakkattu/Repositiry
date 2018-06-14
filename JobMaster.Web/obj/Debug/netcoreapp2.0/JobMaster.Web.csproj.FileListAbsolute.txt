@@ -67,3 +67,5 @@ G:\LatestJobPortal\JobPortal\JobMaster.Web\obj\Debug\netcoreapp2.0\JobMaster.Web
 G:\LatestJobPortal\JobPortal\JobMaster.Web\obj\Debug\netcoreapp2.0\JobMaster.Web.AssemblyInfo.cs
 G:\LatestJobPortal\JobPortal\JobMaster.Web\obj\Debug\netcoreapp2.0\JobMaster.Web.dll
 G:\LatestJobPortal\JobPortal\JobMaster.Web\obj\Debug\netcoreapp2.0\JobMaster.Web.pdb
+E:\Projects\JobPortal\JobMaster.Web\bin\Debug\netcoreapp2.0\JobMaster.Repository.dll
+E:\Projects\JobPortal\JobMaster.Web\bin\Debug\netcoreapp2.0\JobMaster.Repository.pdb

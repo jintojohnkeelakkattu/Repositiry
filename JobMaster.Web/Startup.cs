@@ -34,8 +34,9 @@ namespace JobMaster.Web
                    });
             services.AddMvc();
 
-           
+
             // Register application services.
+            services.AddScoped<IRepository, Repository>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserDetailService, UserDetailService>();
 

@@ -5085,11 +5085,24 @@
           "bin/placeholder/JobMaster.Entities.dll": {}
         }
       },
-      "JobMaster.Service/1.0.0": {
+      "JobMaster.Repository/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
           "JobMaster.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/JobMaster.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JobMaster.Repository.dll": {}
+        }
+      },
+      "JobMaster.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "JobMaster.Repository": "1.0.0"
         },
         "compile": {
           "bin/placeholder/JobMaster.Service.dll": {}
@@ -13278,6 +13291,11 @@
       "type": "project",
       "path": "../JobMaster.Entities/JobMaster.Entities.csproj",
       "msbuildProject": "../JobMaster.Entities/JobMaster.Entities.csproj"
+    },
+    "JobMaster.Repository/1.0.0": {
+      "type": "project",
+      "path": "../JobMaster.Repository/JobMaster.Repository.csproj",
+      "msbuildProject": "../JobMaster.Repository/JobMaster.Repository.csproj"
     },
     "JobMaster.Service/1.0.0": {
       "type": "project",

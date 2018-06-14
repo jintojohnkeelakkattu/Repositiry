@@ -975,6 +975,19 @@
         "runtime": {
           "bin/placeholder/JobMaster.Entities.dll": {}
         }
+      },
+      "JobMaster.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "JobMaster.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/JobMaster.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JobMaster.Repository.dll": {}
+        }
       }
     }
   },
@@ -3585,11 +3598,16 @@
       "type": "project",
       "path": "../JobMaster.Entities/JobMaster.Entities.csproj",
       "msbuildProject": "../JobMaster.Entities/JobMaster.Entities.csproj"
+    },
+    "JobMaster.Repository/1.0.0": {
+      "type": "project",
+      "path": "../JobMaster.Repository/JobMaster.Repository.csproj",
+      "msbuildProject": "../JobMaster.Repository/JobMaster.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "JobMaster.Data >= 1.0.0",
+      "JobMaster.Repository >= 1.0.0",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
   },
@@ -3626,8 +3644,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "E:\\Projects\\JobPortal\\JobMaster.Data\\JobMaster.Data.csproj": {
-              "projectPath": "E:\\Projects\\JobPortal\\JobMaster.Data\\JobMaster.Data.csproj"
+            "E:\\Projects\\JobPortal\\JobMaster.Repository\\JobMaster.Repository.csproj": {
+              "projectPath": "E:\\Projects\\JobPortal\\JobMaster.Repository\\JobMaster.Repository.csproj"
             }
           }
         }

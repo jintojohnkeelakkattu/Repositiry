@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobMaster.Web", "JobMaster.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobMaster.Entities", "JobMaster.Entities\JobMaster.Entities.csproj", "{8E91D6BE-3379-4AD2-B161-E4786DC2992A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobMaster.Repository", "JobMaster.Repository\JobMaster.Repository.csproj", "{2A8A4F38-0344-4275-A56C-F321F34F3F70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8E91D6BE-3379-4AD2-B161-E4786DC2992A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E91D6BE-3379-4AD2-B161-E4786DC2992A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E91D6BE-3379-4AD2-B161-E4786DC2992A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A8A4F38-0344-4275-A56C-F321F34F3F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A8A4F38-0344-4275-A56C-F321F34F3F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A8A4F38-0344-4275-A56C-F321F34F3F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A8A4F38-0344-4275-A56C-F321F34F3F70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

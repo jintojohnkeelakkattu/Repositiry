@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v2.0": {
       "JobMaster.Service/1.0.0": {
         "dependencies": {
-          "JobMaster.Data": "1.0.0"
+          "JobMaster.Repository": "1.0.0"
         },
         "runtime": {
           "JobMaster.Service.dll": {}
@@ -491,6 +491,14 @@
         "runtime": {
           "JobMaster.Entities.dll": {}
         }
+      },
+      "JobMaster.Repository/1.0.0": {
+        "dependencies": {
+          "JobMaster.Data": "1.0.0"
+        },
+        "runtime": {
+          "JobMaster.Repository.dll": {}
+        }
       }
     }
   },
@@ -905,6 +913,11 @@
       "sha512": ""
     },
     "JobMaster.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JobMaster.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

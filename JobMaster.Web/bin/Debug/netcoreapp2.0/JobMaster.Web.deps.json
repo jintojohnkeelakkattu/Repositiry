@@ -4113,9 +4113,20 @@
           "JobMaster.Entities.dll": {}
         }
       },
-      "JobMaster.Service/1.0.0": {
+      "JobMaster.Repository/1.0.0": {
         "dependencies": {
           "JobMaster.Data": "1.0.0"
+        },
+        "runtime": {
+          "JobMaster.Repository.dll": {}
+        },
+        "compile": {
+          "JobMaster.Repository.dll": {}
+        }
+      },
+      "JobMaster.Service/1.0.0": {
+        "dependencies": {
+          "JobMaster.Repository": "1.0.0"
         },
         "runtime": {
           "JobMaster.Service.dll": {}
@@ -6461,6 +6472,11 @@
       "sha512": ""
     },
     "JobMaster.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JobMaster.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
