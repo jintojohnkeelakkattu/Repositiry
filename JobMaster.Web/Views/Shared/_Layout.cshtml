@@ -155,10 +155,10 @@
                             </ul>
                             <ul class="nav navbar-nav navbar-right float-right">
                                 <li class="left">
-                                    <a asp-area="Admin" asp-controller="Account" asp-action="Register"><i class="ti-pencil-alt"></i>Register</a>
+                                    <a asp-area="Common" asp-controller="Account" asp-action="Register"><i class="ti-pencil-alt"></i>Register</a>
                                 </li>
                                 <li class="right">
-                                    <a asp-area="Admin" asp-controller="Account" asp-action="Login"><i class="ti-lock"></i>Log In</a>
+                                    <a asp-area="Common" asp-controller="Account" asp-action="Login"><i class="ti-lock"></i>Log In</a>
                                 </li>
                             </ul>
                         </div>
@@ -173,7 +173,7 @@
                         <div class="col-md-12">
                            <h2>More than <strong>12,000</strong> jobs are waiting to Kickstart your career!</h2>
                             <div class="content">
-                                <form method="" action="">
+                                <form asp-controller="Home" asp-action="SearchJobs">
                                     <div class="row">
                                         <div class="col-md-4 col-sm-6">
                                             <div class="form-group">

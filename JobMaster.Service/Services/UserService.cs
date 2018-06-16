@@ -51,15 +51,8 @@ namespace JobMaster.Service
                 Salt = hashedPassword.Salt,
                 Email = registerUser.Email
             };
-            try
-            {
-                await _repository.Save<User>(user);
-            }catch(Exception ex)
-            {
-
-            }
-           // _dbContext.Users.Add(user);
-           //await  _dbContext.SaveChangesAsync();
+            
+            await _repository.Save<User>(user);
         }
 
         public void UpdateUser(User user)
@@ -107,5 +100,32 @@ namespace JobMaster.Service
         //    var jobs = _dbContext.Jobs.ToList();
         //    return jobs;
         //}
+
+
+
+        IQueryable<Job> IUserService.GetTopJobs()
+        {
+            return _repository.GetAll<Job>();
+        }
+
+        public IQueryable<string> GetUserRoles(string userName)
+        {
+            var user = _repository.GetAll<User>().Where(t => t.UserName == userName).SingleOrDefault();
+            if (user == null)
+            {
+                throw new ActionNotCompletedException("User roles not defined");
+
+            }
+
+           
+            return _repository.GetAll<UserRole>().Include("Role").Where(r => r.UserId == user.Id).Select(r => r.Role.Name);
+        }
+
+
+
+
+
+
+
     }
 }

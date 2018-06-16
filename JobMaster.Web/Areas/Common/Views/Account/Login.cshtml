@@ -1,7 +1,7 @@
 ﻿@model JobMaster.Service.ViewModels.LoginUser
 @{
     ViewData["Title"] = "Login";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Common/Views/Shared/_Layout.cshtml";
 }
 
 <div class="card-header">Login</div>
@@ -30,4 +30,10 @@
         <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
     </div>
 </div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
 

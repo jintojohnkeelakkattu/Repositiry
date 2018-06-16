@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace JobMaster.Web.Areas.Admin.Controllers
 {
-    [Area("Admin")]
+    [Area("Common")]
     public class AccountController : BaseController
     {
         private readonly IUserService userService;
@@ -61,13 +61,13 @@ namespace JobMaster.Web.Areas.Admin.Controllers
                     var success = await userService.ValidateUser(loginUser);
                     if (success)
                     {
-                        //var roles = userService.GetUserRoles(loginUser.UserName);
+                        var roles = userService.GetUserRoles(loginUser.UserName);
                         var claims = new List<Claim>();
                         claims.Add(new Claim(ClaimTypes.Name, loginUser.UserName));
-                        //foreach (var role in roles)
-                        //{
-                        //    claims.Add(new Claim(ClaimTypes.Role, role));
-                        //}
+                        foreach (var role in roles)
+                        {
+                            claims.Add(new Claim(ClaimTypes.Role, role));
+                        }
 
                         ClaimsIdentity userIdentity = new ClaimsIdentity(claims, "Credentials");
                         ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);

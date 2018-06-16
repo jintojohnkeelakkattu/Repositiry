@@ -107,7 +107,6 @@ namespace JobMaster.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 64)))
                         .HasColumnType("varchar(50)")
                         .HasMaxLength(50);
 
@@ -197,7 +196,8 @@ namespace JobMaster.Data.Migrations
 
                     b.Property<int>("RoleId");
 
-                    b.HasKey("UserId", "RoleId");
+                    b.HasKey("UserId", "RoleId")
+                        .HasAnnotation("SqlServer:Clustered", true);
 
                     b.HasIndex("RoleId")
                         .IsUnique();
