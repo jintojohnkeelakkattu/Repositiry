@@ -39,6 +39,7 @@ namespace JobMaster.Web
             services.AddScoped<IRepository, Repository>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserDetailService, UserDetailService>();
+            services.AddScoped<IAdminService, AdminService>();
 
         }
 

@@ -3612,27 +3612,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\Nayas\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "E:\\Projects\\JobPortal\\JobMaster.Service\\JobMaster.Service.csproj",
+      "projectUniqueName": "E:\\Projects\\JobPortal\\GenericPortal\\JobPortal\\JobMaster.Service\\JobMaster.Service.csproj",
       "projectName": "JobMaster.Service",
-      "projectPath": "E:\\Projects\\JobPortal\\JobMaster.Service\\JobMaster.Service.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\JobPortal\\JobMaster.Service\\obj\\",
+      "projectPath": "E:\\Projects\\JobPortal\\GenericPortal\\JobPortal\\JobMaster.Service\\JobMaster.Service.csproj",
+      "packagesPath": "C:\\Users\\Nayas\\.nuget\\packages\\",
+      "outputPath": "E:\\Projects\\JobPortal\\GenericPortal\\JobPortal\\JobMaster.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\Nayas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -3644,8 +3644,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "E:\\Projects\\JobPortal\\JobMaster.Repository\\JobMaster.Repository.csproj": {
-              "projectPath": "E:\\Projects\\JobPortal\\JobMaster.Repository\\JobMaster.Repository.csproj"
+            "E:\\Projects\\JobPortal\\GenericPortal\\JobPortal\\JobMaster.Repository\\JobMaster.Repository.csproj": {
+              "projectPath": "E:\\Projects\\JobPortal\\GenericPortal\\JobPortal\\JobMaster.Repository\\JobMaster.Repository.csproj"
             }
           }
         }
@@ -3662,7 +3662,7 @@
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0.0",
             "autoReferenced": true
           }
         },

@@ -6149,7 +6149,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
+      "sha512": "1cG4IoonPqns7zN7y7mc0LuZHk3j0NstWuxiLE3cl1fRXuTJmFj0F4lpb/BKREkuMjwjW/VWljaSWKRbELEskA==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "files": [
@@ -13312,27 +13312,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\Nayas\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "E:\\Projects\\JobPortal\\JobMaster.Web\\JobMaster.Web.csproj",
+      "projectUniqueName": "E:\\Projects\\JobPortal\\GenericPortal\\JobPortal\\JobMaster.Web\\JobMaster.Web.csproj",
       "projectName": "JobMaster.Web",
-      "projectPath": "E:\\Projects\\JobPortal\\JobMaster.Web\\JobMaster.Web.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\JobPortal\\JobMaster.Web\\obj\\",
+      "projectPath": "E:\\Projects\\JobPortal\\GenericPortal\\JobPortal\\JobMaster.Web\\JobMaster.Web.csproj",
+      "packagesPath": "C:\\Users\\Nayas\\.nuget\\packages\\",
+      "outputPath": "E:\\Projects\\JobPortal\\GenericPortal\\JobPortal\\JobMaster.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\Nayas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -13344,8 +13344,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "E:\\Projects\\JobPortal\\JobMaster.Service\\JobMaster.Service.csproj": {
-              "projectPath": "E:\\Projects\\JobPortal\\JobMaster.Service\\JobMaster.Service.csproj"
+            "E:\\Projects\\JobPortal\\GenericPortal\\JobPortal\\JobMaster.Service\\JobMaster.Service.csproj": {
+              "projectPath": "E:\\Projects\\JobPortal\\GenericPortal\\JobPortal\\JobMaster.Service\\JobMaster.Service.csproj"
             }
           }
         }
@@ -13359,18 +13359,18 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.All": {
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
-            "version": "[2.0.6, )"
+            "version": "2.0.0"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0.0",
             "autoReferenced": true
           },
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+          "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "[2.0.0, )"
+            "version": "2.0.6"
           }
         },
         "imports": [

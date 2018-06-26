@@ -12,3 +12,16 @@ E:\Projects\JobPortal\JobMaster.Repository\obj\Debug\netcoreapp2.0\JobMaster.Rep
 E:\Projects\JobPortal\JobMaster.Repository\obj\Debug\netcoreapp2.0\JobMaster.Repository.csproj.CopyComplete
 E:\Projects\JobPortal\JobMaster.Repository\obj\Debug\netcoreapp2.0\JobMaster.Repository.dll
 E:\Projects\JobPortal\JobMaster.Repository\obj\Debug\netcoreapp2.0\JobMaster.Repository.pdb
+E:\Projects\JobPortal\GenericPortal\JobPortal\JobMaster.Repository\bin\Debug\netcoreapp2.0\JobMaster.Repository.deps.json
+E:\Projects\JobPortal\GenericPortal\JobPortal\JobMaster.Repository\bin\Debug\netcoreapp2.0\JobMaster.Repository.dll
+E:\Projects\JobPortal\GenericPortal\JobPortal\JobMaster.Repository\bin\Debug\netcoreapp2.0\JobMaster.Repository.pdb
+E:\Projects\JobPortal\GenericPortal\JobPortal\JobMaster.Repository\bin\Debug\netcoreapp2.0\JobMaster.Data.dll
+E:\Projects\JobPortal\GenericPortal\JobPortal\JobMaster.Repository\bin\Debug\netcoreapp2.0\JobMaster.Entities.dll
+E:\Projects\JobPortal\GenericPortal\JobPortal\JobMaster.Repository\bin\Debug\netcoreapp2.0\JobMaster.Data.pdb
+E:\Projects\JobPortal\GenericPortal\JobPortal\JobMaster.Repository\bin\Debug\netcoreapp2.0\JobMaster.Entities.pdb
+E:\Projects\JobPortal\GenericPortal\JobPortal\JobMaster.Repository\obj\Debug\netcoreapp2.0\JobMaster.Repository.csprojResolveAssemblyReference.cache
+E:\Projects\JobPortal\GenericPortal\JobPortal\JobMaster.Repository\obj\Debug\netcoreapp2.0\JobMaster.Repository.csproj.CoreCompileInputs.cache
+E:\Projects\JobPortal\GenericPortal\JobPortal\JobMaster.Repository\obj\Debug\netcoreapp2.0\JobMaster.Repository.AssemblyInfoInputs.cache
+E:\Projects\JobPortal\GenericPortal\JobPortal\JobMaster.Repository\obj\Debug\netcoreapp2.0\JobMaster.Repository.AssemblyInfo.cs
+E:\Projects\JobPortal\GenericPortal\JobPortal\JobMaster.Repository\obj\Debug\netcoreapp2.0\JobMaster.Repository.dll
+E:\Projects\JobPortal\GenericPortal\JobPortal\JobMaster.Repository\obj\Debug\netcoreapp2.0\JobMaster.Repository.pdb

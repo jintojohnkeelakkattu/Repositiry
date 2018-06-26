@@ -33,7 +33,7 @@ namespace JobMaster.Service
             return _repository.GetAll<User>();
         }
 
-        public async Task CreateUser(RegisterUser registerUser)
+        public void CreateUser(RegisterUser registerUser)
         {
             var isExistingUser = _repository.GetAll<User>().Any(r => r.UserName == registerUser.UserName);
 
@@ -52,7 +52,7 @@ namespace JobMaster.Service
                 Email = registerUser.Email
             };
             
-            await _repository.Save<User>(user);
+            _repository.Save<User>(user);
         }
 
         public void UpdateUser(User user)

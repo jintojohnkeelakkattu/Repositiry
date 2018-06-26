@@ -33,7 +33,10 @@ namespace JobMaster.Web.Areas.Admin.Controllers
                 if (ModelState.IsValid)
                 {
                   userService.CreateUser(register);
+
+
                   ModelState.Clear();
+
                   ViewBag.Message = "Created Successfully.";
                 }
             }

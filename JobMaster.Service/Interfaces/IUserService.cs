@@ -11,7 +11,7 @@ namespace JobMaster.Service
     {
         IEnumerable<User> GetUsers();
         User GetUser(long id);
-        Task CreateUser(RegisterUser user);
+        void CreateUser(RegisterUser user);
         Task<bool> ValidateUser(LoginUser user);
         void UpdateUser(User user);
         void DeleteUser(long id);
