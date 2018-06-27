@@ -52,7 +52,8 @@ namespace JobMaster.Service
                 Email = registerUser.Email
             };
             
-            _repository.Save<User>(user);
+            _repository.Add<User>(user);
+            _repository.Save();
         }
 
         public void UpdateUser(User user)

@@ -71,12 +71,21 @@ namespace JobMaster
             return entities;
         }
 
-        public void Save<T>(T entity) where T : class
+        public void Add<T>(T entity) where T : class
         {
             DbSet<T> entities = _dbContext.Set<T>();
             entities.Add(entity);
+        }
+
+        public void Save()
+        {
             _dbContext.SaveChanges();
         }
+
+        //public void Save()
+        //{
+        //    _dbContext.SaveChanges();
+        //}
 
         //public async Task Update<T>() where T : class
         //{
