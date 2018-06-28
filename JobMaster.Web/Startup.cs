@@ -8,6 +8,7 @@ using JobMaster.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 
 namespace JobMaster.Web
 {
@@ -29,7 +30,7 @@ namespace JobMaster.Web
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                    .AddCookie(options =>
                    {
-                       options.LoginPath = "/admin/account/login/";
+                       options.LoginPath = new PathString("/Common/Account/Login ");
 
                    });
             services.AddMvc();
@@ -46,6 +47,7 @@ namespace JobMaster.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseAuthentication();
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();

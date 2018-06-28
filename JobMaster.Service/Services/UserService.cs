@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System;
+using JobMaster.Entities;
 
 namespace JobMaster.Service
 {
@@ -51,7 +52,13 @@ namespace JobMaster.Service
                 Salt = hashedPassword.Salt,
                 Email = registerUser.Email
             };
-            
+
+            // add user
+            user.UserRoles.Add(new UserRole()
+            {
+                User = user,
+                Role = _repository.GetAll<Role>().Where(r => r.Id == (int)Roles.Admin).First()
+            });
             _repository.Add<User>(user);
             _repository.Save();
         }
@@ -109,24 +116,15 @@ namespace JobMaster.Service
             return _repository.GetAll<Job>();
         }
 
-        public IQueryable<string> GetUserRoles(string userName)
+        public IList<string> GetUserRoles(string userName)
         {
             var user = _repository.GetAll<User>().Where(t => t.UserName == userName).SingleOrDefault();
             if (user == null)
             {
                 throw new ActionNotCompletedException("User roles not defined");
-
             }
 
-           
-            return _repository.GetAll<UserRole>().Include("Role").Where(r => r.UserId == user.Id).Select(r => r.Role.Name);
+            return _repository.GetAll<UserRole>().Include(r=>r.Role).Where(r => r.UserId == user.Id).Select(r => r.Role.Name).ToList();
         }
-
-
-
-
-
-
-
     }
 }

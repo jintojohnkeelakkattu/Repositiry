@@ -16,7 +16,6 @@ namespace JobMaster.Service
         void UpdateUser(User user);
         void DeleteUser(long id);
         IQueryable<Job> GetTopJobs();
-        IQueryable<string> GetUserRoles(string userName);
-        //IEnumerable<Job> GetTopJobs();
+        IList<string> GetUserRoles(string userName);
     }
 }
