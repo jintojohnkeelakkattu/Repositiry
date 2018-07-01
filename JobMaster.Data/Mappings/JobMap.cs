@@ -17,7 +17,7 @@ namespace JobMaster.Data
             builder.Property(t => t.Company).IsRequired().HasMaxLength(50).HasColumnType("varchar(50)");
             builder.Property(t => t.SalaryFrom).IsRequired().HasMaxLength(50).HasColumnType("varchar(50)");
             builder.Property(t => t.SalaryTo).IsRequired().HasMaxLength(50).HasColumnType("varchar(50)");
-            builder.Property(t => t.UserId).IsRequired();
+            builder.Property(t => t.UserId);
         }
     }
 }

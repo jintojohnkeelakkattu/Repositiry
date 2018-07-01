@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <br />
+    <div style="margin:0 auto;">
+        <table id="jobsApplied" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Job</th>
+                    <th>Applied Date</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_DatatableScriptsPartial");}
+    <script>
+
+        $(document).ready(function ()
+        {
+            $("#jobsApplied").DataTable({
+                "processing": true, // for show progress bar
+                "serverSide": true, // for process server side
+                //"filter": true, // this is for disable filter (search box)
+                //"orderMulti": false, // for disable multiple column at once
+                "ajax": {
+                    "url": "@Url.Action("GetAllJobsApplied", "Home", new { Area = "Admin" })",
+                    "type": "POST",
+                    "datatype": "json"
+                },
+                "columnDefs":
+                [{
+                    "targets": [0],
+                    "visible": false,
+                    "searchable": false
+                }],
+                "columns": [
+                    { "data": "id", "name": "id", "autoWidth": true },
+                    { "data": "name", "name": "name", "autoWidth": true },
+                    { "data": "job", "name": "job", "autoWidth": true },
+                    { "data": "applieddate", "name": "applieddate", "autoWidth": true },                    
+                ]
+
+            });
+        });
+    </script>
+}

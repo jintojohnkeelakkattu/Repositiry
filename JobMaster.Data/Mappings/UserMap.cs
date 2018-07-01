@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace JobMaster.Data
 {
-    public class UserMap : IEntityTypeConfiguration<User>
+    public class UserMap : IEntityTypeConfiguration<T>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<T> builder)
         {
             builder.HasKey(t => t.Id);
             builder.Property(t => t.Email).IsRequired().HasMaxLength(50).HasColumnType("varchar(50)");

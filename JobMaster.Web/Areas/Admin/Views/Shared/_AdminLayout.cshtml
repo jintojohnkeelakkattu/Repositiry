@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Job Portal</title>
+    <title>JobPortal - Search the best jobs available in India & Abroad - JobPortal.com</title>
     <environment include="Development">
         <!-- Bootstrap core CSS-->
         <link href="~/css/sbadmin/bootstrap.min.css" rel="stylesheet">
@@ -34,20 +34,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Manage Jobs">
                     <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="nav-link" >
                         <i class="fa fa-fw fa-dashboard"></i>
-                        <span class="nav-link-text">Jobs</span>
+                        <span class="nav-link-text">Manage Jobs</span>
                     </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                    <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="nav-link">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Manage Users">
+                    <a asp-area="Admin" asp-controller="Home" asp-action="ListAllUsers" class="nav-link">
                         <i class="fa fa-fw fa-area-chart"></i>
                         <span class="nav-link-text">Manage Users</span>
                     </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                    <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="nav-link">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Jobs Applied">
+                    <a asp-area="Admin" asp-controller="Home" asp-action="ListAllJobsApplied" class="nav-link">
                         <i class="fa fa-fw fa-table"></i>
                         <span class="nav-link-text">Jobs Applied</span>
                     </a>
@@ -226,10 +226,11 @@
                         </div>
                     </form>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                        <i class="fa fa-fw fa-sign-out"></i>Logout
-                    </a>
+                    <form method="post" asp-area="Common" asp-controller="Account" asp-action="Logout">
+                        <input type="submit" value="Logout" class="btn btn-danger"/>
+                    </form>
                 </li>
             </ul>
         </div>

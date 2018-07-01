@@ -56,14 +56,6 @@ namespace JobMaster
             }
         }
 
-
-
-    
-        //public async Task Delete<T>() where T : class
-        //{
-        //    throw new NotImplementedException();
-        //}
-
         public IQueryable<T> GetAll<T>() where T : class
         {
             DbSet<T> entities = _dbContext.Set<T>();
@@ -82,14 +74,18 @@ namespace JobMaster
             _dbContext.SaveChanges();
         }
 
-        //public void Save()
-        //{
-        //    _dbContext.SaveChanges();
-        //}
+        public void Delete<T>(T entity) where T : class
+        {
+            DbSet<T> entities = _dbContext.Set<T>();
+            entities.Remove(entity);
+        }
 
-        //public async Task Update<T>() where T : class
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public T Get(long id)
+        {
+            DbSet<T> entities = _dbContext.Set<T>();
+            return entities.Find(id);
+        }
+
+
     }
 }

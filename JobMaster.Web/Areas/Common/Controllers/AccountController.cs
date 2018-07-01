@@ -32,12 +32,12 @@ namespace JobMaster.Web.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                  userService.CreateUser(register);
+                    userService.CreateUser(register);
 
 
-                  ModelState.Clear();
+                    ModelState.Clear();
 
-                  ViewBag.Message = "Created Successfully.";
+                    ViewBag.Message = "Created Successfully.";
                 }
             }
             catch (Exception ex)
@@ -93,6 +93,13 @@ namespace JobMaster.Web.Areas.Admin.Controllers
                 ViewBag.ErrorMessage = GetErrorMessage();
             }
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Home", new { Area = "" });
         }
 
     }

@@ -196,14 +196,9 @@ namespace JobMaster.Data.Migrations
 
                     b.Property<int>("RoleId");
 
-                    b.HasKey("UserId", "RoleId")
-                        .HasAnnotation("SqlServer:Clustered", true);
+                    b.HasKey("UserId", "RoleId");
 
-                    b.HasIndex("RoleId")
-                        .IsUnique();
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasIndex("RoleId");
 
                     b.ToTable("UserRoles");
                 });
@@ -242,13 +237,13 @@ namespace JobMaster.Data.Migrations
             modelBuilder.Entity("JobMaster.UserRole", b =>
                 {
                     b.HasOne("JobMaster.Role", "Role")
-                        .WithOne("UserRole")
-                        .HasForeignKey("JobMaster.UserRole", "RoleId")
+                        .WithMany("UserRoles")
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("JobMaster.User", "User")
-                        .WithOne("UserRole")
-                        .HasForeignKey("JobMaster.UserRole", "UserId")
+                        .WithMany("UserRoles")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

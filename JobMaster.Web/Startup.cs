@@ -30,7 +30,7 @@ namespace JobMaster.Web
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                    .AddCookie(options =>
                    {
-                       options.LoginPath = new PathString("/Common/Account/Login ");
+                       options.LoginPath = new PathString("/Common/Account/Login");
 
                    });
             services.AddMvc();

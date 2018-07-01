@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 
 namespace JobMaster {
-    public class User : BaseEntity
+    public class T : BaseEntity
     {
-        public User()
+        public T()
         {
             UserRoles = new List<UserRole>();
         }
