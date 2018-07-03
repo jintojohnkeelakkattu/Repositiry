@@ -2032,6 +2032,7 @@ footer {
   padding: 15px;
   display: inline-block;
   margin-bottom: 15px;
+  width:100%;
 }
 .job-list .thumb {
   float: left;

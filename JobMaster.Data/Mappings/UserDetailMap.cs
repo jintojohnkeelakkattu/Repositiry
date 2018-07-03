@@ -12,7 +12,7 @@ namespace JobMaster.Data
             entityBuilder.Property(t => t.FirstName).IsRequired().HasMaxLength(50).HasColumnType("varchar(50)");
             entityBuilder.Property(t => t.LastName).IsRequired().HasMaxLength(50).HasColumnType("varchar(50)");
             entityBuilder.Property(t => t.Address).HasMaxLength(50).HasColumnType("varchar(50)");
-            entityBuilder.HasMany(t => t.Jobs).WithOne(u => u.UserDetail).HasForeignKey(x => x.UserId);
+            //entityBuilder.HasMany(t => t.Jobs).WithOne(u => u.UserDetail).HasForeignKey(x => x.UserId);
         }
     }
 }

@@ -13,6 +13,6 @@ namespace JobMaster
         public int SalaryFrom { get; set; }
         public int SalaryTo { get; set; }
         public int UserId { get; set; }
-        public virtual UserDetail UserDetail { get; set; }
+        public virtual User User { get; set; }
     }
 }

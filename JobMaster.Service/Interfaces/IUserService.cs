@@ -9,11 +9,11 @@ namespace JobMaster.Service
 {
    public interface IUserService
     {
-        IEnumerable<T> GetUsers();
-        T GetUser(long id);
+        IEnumerable<User> GetUsers();
+        User GetUser(long id);
         void CreateUser(RegisterUser user);
-        Task<bool> ValidateUser(LoginUser user);
-        void UpdateUser(T user);
+        Task<User> ValidateUser(LoginUser user);
+        void UpdateUser(User user);
         void DeleteUser(long id);
         IQueryable<Job> GetTopJobs();
         IList<string> GetUserRoles(string userName);

@@ -80,11 +80,17 @@ namespace JobMaster
             entities.Remove(entity);
         }
 
-        public T Get(long id)
+        public void Update<T>(T entity) where T : class
         {
             DbSet<T> entities = _dbContext.Set<T>();
-            return entities.Find(id);
+            _dbContext.Entry(entities).State = EntityState.Added;
         }
+
+        //public T Get(long id)
+        //{
+        //    DbSet<T> entities = _dbContext.Set<T>();
+        //    return entities.Find(id);
+        //}
 
 
     }

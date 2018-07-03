@@ -5,7 +5,7 @@ namespace JobMaster.Data
 {
     public class ApplicationDbContext: DbContext
     {
-        public DbSet<T> Users { get; set; }
+        public DbSet<User> Users { get; set; }
         public DbSet<UserDetail> UserDetails { get; set; }
         public DbSet<UserPhone> UserPhones { get; set; }
         public DbSet<Role> Roles { get; set; }

@@ -8,7 +8,7 @@ namespace JobMaster
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
-        public virtual T User { get; set; }
-        public virtual ICollection<Job> Jobs { get; set; }
+        public virtual User User { get; set; }
+        //public virtual ICollection<Job> Jobs { get; set; }
     }
 }

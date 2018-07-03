@@ -61,12 +61,13 @@ namespace JobMaster.Web.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var success = await userService.ValidateUser(loginUser);
-                    if (success)
+                    var user = await userService.ValidateUser(loginUser);
+                    if (user != null)
                     {
                         var roles = userService.GetUserRoles(loginUser.UserName);
                         var claims = new List<Claim>();
                         claims.Add(new Claim(ClaimTypes.Name, loginUser.UserName));
+                        claims.Add(new Claim("UserId", user.ToString()));
                         foreach (var role in roles)
                         {
                             claims.Add(new Claim(ClaimTypes.Role, role));

@@ -24,19 +24,19 @@ namespace JobMaster.Service
             throw new System.NotImplementedException();
         }
 
-        public T GetUser(long id)
+        public User GetUser(long id)
         {
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<T> GetUsers()
+        public IEnumerable<User> GetUsers()
         {
-            return _repository.GetAll<T>();
+            return _repository.GetAll<User>();
         }
 
         public void CreateUser(RegisterUser registerUser)
         {
-            var isExistingUser = _repository.GetAll<T>().Any(r => r.UserName == registerUser.UserName);
+            var isExistingUser = _repository.GetAll<User>().Any(r => r.UserName == registerUser.UserName);
 
             if (isExistingUser)
             {
@@ -45,7 +45,7 @@ namespace JobMaster.Service
 
             HashedPassword hashedPassword = new HashedPassword(registerUser.Password, 2);
 
-            T user = new T()
+            User user = new User()
             {
                 UserName = registerUser.UserName,
                 HashedPassword = hashedPassword.Hash,
@@ -59,23 +59,24 @@ namespace JobMaster.Service
                 User = user,
                 Role = _repository.GetAll<Role>().Where(r => r.Id == (int)Roles.Admin).First()
             });
-            _repository.Add<T>(user);
+            _repository.Add<User>(user);
             _repository.Save();
         }
 
-        public void UpdateUser(T user)
+        public void UpdateUser(User user)
         {
             throw new System.NotImplementedException();
         }
 
-        public async Task<bool> ValidateUser(LoginUser loginUser)
+        public async Task<User> ValidateUser(LoginUser loginUser)
         {
-            var isUserExist = _repository.GetAll<T>().Any(r => r.UserName == loginUser.UserName);
+            var isUserExist = _repository.GetAll<User>().Any(r => r.UserName == loginUser.UserName);
             if (!isUserExist)
             {
                 throw new ActionNotCompletedException($"{loginUser.UserName} doesn't exist.");
+
             }
-            var user = await _repository.GetAll<T>().SingleAsync(u => u.UserName == loginUser.UserName);
+            var user = await _repository.GetAll<User>().SingleAsync(u => u.UserName == loginUser.UserName);
             HashedPassword hp = new HashedPassword(user.Salt, user.HashedPassword, 2);
 
             if (!hp.CheckPassword(loginUser.Password))
@@ -83,7 +84,7 @@ namespace JobMaster.Service
                 throw new ActionNotCompletedException("Invalid credentials");
             }
 
-            return true;
+            return user;
         }
 
         //public List<string> GetUserRoles(string userName)
@@ -118,7 +119,7 @@ namespace JobMaster.Service
 
         public IList<string> GetUserRoles(string userName)
         {
-            var user = _repository.GetAll<T>().Where(t => t.UserName == userName).SingleOrDefault();
+            var user = _repository.GetAll<User>().Where(t => t.UserName == userName).SingleOrDefault();
             if (user == null)
             {
                 throw new ActionNotCompletedException("User roles not defined");

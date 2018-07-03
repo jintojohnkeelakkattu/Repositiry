@@ -9,7 +9,7 @@ namespace JobMaster.Service.ViewModels
     {
         [Required]
         [Display(Name = "Title")]
-        [StringLength(50, MinimumLength = 4)]
+        [StringLength(50)]
         public string Title { get; set; }
 
         [Required]
@@ -19,23 +19,24 @@ namespace JobMaster.Service.ViewModels
 
         [Required]
         [Display(Name = "Experience")]
-        [StringLength(50, MinimumLength = 5)]
+        [StringLength(50)]
         public string Experience { get; set; }
 
 
         [Required]
         [Display(Name = "Company")]
-        [StringLength(50, MinimumLength = 5)]
+        [StringLength(50)]
         public string Company { get; set; }
 
         [Required]
         [Display(Name = "Salary From")]
-        [StringLength(50, MinimumLength = 5)]
+        [StringLength(50)]
         public string SalaryFrom { get; set; }
 
         [Required]
         [Display(Name = "Salary To")]
-        [StringLength(50, MinimumLength = 5)]
+        [StringLength(50)]
         public string SalaryTo { get; set; }
+
     }
 }

@@ -7,17 +7,18 @@ using JobMaster.Service;
 using System.Dynamic;
 using Microsoft.AspNetCore.Authorization;
 using JobMaster.Service.ViewModels;
+using System.Security.Claims;
 
 namespace JobMaster.Web.Areas.Admin.Controllers
 {
-    [Authorize]
+    [Authorize (Roles = "Admin")]
     [Area("Admin")]
     public class HomeController : BaseController
     {
-        private readonly IAdminService adminService;
-        public HomeController(IAdminService _adminService)
+        private readonly IJobService jobService;
+        public HomeController(IJobService _jobService)
         {
-            adminService = _adminService;
+            jobService = _jobService;
         }
 
         public IActionResult Index()
@@ -62,7 +63,7 @@ namespace JobMaster.Web.Areas.Admin.Controllers
 
             //int recordsTotal = 0;
 
-            var jobs = adminService.GetAllJobs().Select(r => new
+            var jobs = jobService.GetAllJobs().Select(r => new
             {
                 r.Id,
                 r.Title,
@@ -113,7 +114,7 @@ namespace JobMaster.Web.Areas.Admin.Controllers
 
             //int recordsTotal = 0;
 
-            var users = adminService.GetAllUsers().Select(r => new
+            var users = jobService.GetAllUsers().Select(r => new
             {
                 r.Id,
                 r.FirstName,
@@ -147,7 +148,7 @@ namespace JobMaster.Web.Areas.Admin.Controllers
             var searchValue = Request.Form["search[value]"].FirstOrDefault();
             int pageSize = length != null ? Convert.ToInt32(length) : 0;
             int skip = start != null ? Convert.ToInt32(start) : 0;
-            var users = adminService.GetAllJobsApplied().Select(r => new
+            var users = jobService.GetAllJobsApplied().Select(r => new
             {
                 r.Id,
                 r.Name,
@@ -181,7 +182,14 @@ namespace JobMaster.Web.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    adminService.Add(job);
+                    var identity = HttpContext.User.Identity as ClaimsIdentity;
+
+                    if (identity == null)
+                    {
+                        RedirectToAction("Common", "Login");
+                    }
+                    
+                    jobService.Add(job, identity.Name);
                     ModelState.Clear();
                     ViewBag.Message = "Job added successfully.";
                 }
@@ -200,8 +208,8 @@ namespace JobMaster.Web.Areas.Admin.Controllers
             try
             {
                 if(id>0)
-                {                 
-                    adminService.Delete(id);
+                {
+                    jobService.Delete(id);
                     ModelState.Clear();
                     ViewBag.Message = "Job deleted successfully.";
                 }

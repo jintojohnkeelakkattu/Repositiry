@@ -6,6 +6,6 @@ namespace JobMaster {
         public string PhoneNumber { get; set; }
         public PhoneType PhoneType { get; set; }
         public int UserId { get; set; }
-        public virtual T User { get; set; }
+        public virtual User User { get; set; }
     }
 }

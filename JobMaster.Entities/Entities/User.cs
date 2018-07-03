@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 
 namespace JobMaster {
-    public class T : BaseEntity
+    public class User : BaseEntity
     {
-        public T()
+        public User()
         {
             UserRoles = new List<UserRole>();
         }
@@ -18,5 +18,6 @@ namespace JobMaster {
         public virtual UserDetail UserDetail { get; set; }
         public virtual ICollection<UserRole> UserRoles { get; set; }
         public virtual ICollection<UserPhone> UserPhones {get;set;}
+        public virtual ICollection<Job> Jobs { get; set; }
     }
 }
