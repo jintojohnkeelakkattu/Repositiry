@@ -11,7 +11,7 @@ using System.Security.Claims;
 
 namespace JobMaster.Web.Areas.Admin.Controllers
 {
-    [Authorize (Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     public class HomeController : BaseController
     {
@@ -119,7 +119,7 @@ namespace JobMaster.Web.Areas.Admin.Controllers
                 r.Id,
                 r.FirstName,
                 r.LastName,
-                r.Address                
+                r.Address
             });
 
             if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
@@ -172,7 +172,7 @@ namespace JobMaster.Web.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult AddJob()
         {
-            return PartialView("_AddJob");
+            return View();
         }
 
         [HttpPost]
@@ -182,16 +182,74 @@ namespace JobMaster.Web.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    // TODO: Add claims identity to be scoped
                     var identity = HttpContext.User.Identity as ClaimsIdentity;
 
                     if (identity == null)
                     {
                         RedirectToAction("Common", "Login");
                     }
-                    
+
                     jobService.Add(job, identity.Name);
                     ModelState.Clear();
                     ViewBag.Message = "Job added successfully.";
+                }
+                else
+                {
+                    var errors = ModelState.Select(x => x.Value.Errors)
+                         .Where(y => y.Count > 0)
+                         .ToList();
+
+                    throw new ActionNotCompletedException(errors.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                HandleException(ex);
+                ViewBag.ErrorMessage = GetErrorMessage();
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult UpdateJob(long id)
+        {
+            var job = new Job();
+            if (id > 0)
+            {
+                job = jobService.GetAllJobs().Single(match => match.Id == id);
+            }
+            JobInformation jobInformation = new JobInformation()
+            {
+                Id = job.Id,
+                Title = job.Title,
+                Description = job.Description,
+                Experience = job.Experience,
+                Company = job.Company,
+                SalaryFrom = Convert.ToString(job.SalaryFrom),
+                SalaryTo = Convert.ToString(job.SalaryTo)
+            };
+            return View(jobInformation);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateJob(JobInformation job)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    jobService.Update(job);
+                    ModelState.Clear();
+                    ViewBag.Message = "Job updated successfully.";
+                }
+                else
+                {
+                    var errors = ModelState.Select(x => x.Value.Errors)
+                         .Where(y => y.Count > 0)
+                         .ToList();
+
+                    throw new ActionNotCompletedException(errors.ToString());
                 }
             }
             catch (Exception ex)
@@ -207,18 +265,18 @@ namespace JobMaster.Web.Areas.Admin.Controllers
         {
             try
             {
-                if(id>0)
+                if (id > 0)
                 {
                     jobService.Delete(id);
                     ModelState.Clear();
                     ViewBag.Message = "Job deleted successfully.";
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 HandleException(ex);
                 ViewBag.ErrorMessage = GetErrorMessage();
-            }            
+            }
             return RedirectToAction("Index");
         }
     }

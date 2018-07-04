@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JobMaster.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180615082943_NewMigration23")]
-    partial class NewMigration23
+    [Migration("20180703071222_NewMigration1")]
+    partial class NewMigration1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -198,14 +198,9 @@ namespace JobMaster.Data.Migrations
 
                     b.Property<int>("RoleId");
 
-                    b.HasKey("UserId", "RoleId")
-                        .HasAnnotation("SqlServer:Clustered", true);
+                    b.HasKey("UserId", "RoleId");
 
-                    b.HasIndex("RoleId")
-                        .IsUnique();
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasIndex("RoleId");
 
                     b.ToTable("UserRoles");
                 });
@@ -219,7 +214,7 @@ namespace JobMaster.Data.Migrations
 
             modelBuilder.Entity("JobMaster.Job", b =>
                 {
-                    b.HasOne("JobMaster.UserDetail", "UserDetail")
+                    b.HasOne("JobMaster.User", "User")
                         .WithMany("Jobs")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -244,13 +239,13 @@ namespace JobMaster.Data.Migrations
             modelBuilder.Entity("JobMaster.UserRole", b =>
                 {
                     b.HasOne("JobMaster.Role", "Role")
-                        .WithOne("UserRole")
-                        .HasForeignKey("JobMaster.UserRole", "RoleId")
+                        .WithMany("UserRoles")
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("JobMaster.User", "User")
-                        .WithOne("UserRole")
-                        .HasForeignKey("JobMaster.UserRole", "UserId")
+                        .WithMany("UserRoles")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

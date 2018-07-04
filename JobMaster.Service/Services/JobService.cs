@@ -17,7 +17,7 @@ namespace JobMaster.Service
 
         public void Add(JobInformation jobInformation, string username)
         {
-            
+
             Job job = new Job()
             {
                 Title = jobInformation.Title,
@@ -26,7 +26,7 @@ namespace JobMaster.Service
                 Company = jobInformation.Company,
                 SalaryFrom = Convert.ToInt32(jobInformation.SalaryFrom),
                 SalaryTo = Convert.ToInt32(jobInformation.SalaryTo),
-                UserId = _repository.GetAll<User>().Single(r=>r.UserName == username).Id
+                UserId = _repository.GetAll<User>().Single(r => r.UserName == username).Id
             };
             _repository.Add<Job>(job);
             _repository.Save();
@@ -36,8 +36,13 @@ namespace JobMaster.Service
         {
             if (id > 0)
             {
-               // Job job = _repository.Get(id);
-               // _repository.Delete<Job>(job);
+
+                var job = _repository.GetAll<Job>().SingleOrDefault(r => r.Id == id);
+                if (job == null)
+                {
+                    throw new ActionNotCompletedException("Job could not be found");
+                }
+                _repository.Delete<Job>(job);
                 _repository.Save();
             }
         }
@@ -61,9 +66,23 @@ namespace JobMaster.Service
             return _repository.GetAll<UserDetail>().OrderByDescending(r => r.Id).OrderBy(r => r.FirstName);
         }
 
-        public void Update(Job job)
+        public void Update(JobInformation jobInformation)
         {
-            throw new System.NotImplementedException();
+            if (jobInformation == null)
+            {
+                throw new ActionNotCompletedException("Invalid details");
+            }
+
+            Job job = _repository.GetAll<Job>().Single(match => match.Id == jobInformation.Id);
+            job.Title = jobInformation.Title;
+            job.Description = jobInformation.Description;
+            job.Experience = jobInformation.Experience;
+            job.Company = jobInformation.Company;
+            job.SalaryFrom = Convert.ToInt32(jobInformation.SalaryFrom);
+            job.SalaryTo = Convert.ToInt32(jobInformation.SalaryTo);
+
+            //_repository.Update<Job>(job);
+            _repository.Save();
         }
     }
 }

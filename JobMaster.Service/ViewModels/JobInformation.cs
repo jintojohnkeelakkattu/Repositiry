@@ -7,6 +7,7 @@ namespace JobMaster.Service.ViewModels
 {
     public class JobInformation
     {
+        public int Id { get; set; }
         [Required]
         [Display(Name = "Title")]
         [StringLength(50)]

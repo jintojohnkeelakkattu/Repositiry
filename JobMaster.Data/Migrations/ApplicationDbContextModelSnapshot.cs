@@ -212,7 +212,7 @@ namespace JobMaster.Data.Migrations
 
             modelBuilder.Entity("JobMaster.Job", b =>
                 {
-                    b.HasOne("JobMaster.UserDetail", "UserDetail")
+                    b.HasOne("JobMaster.User", "User")
                         .WithMany("Jobs")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

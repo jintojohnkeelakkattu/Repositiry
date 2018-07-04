@@ -83,15 +83,7 @@ namespace JobMaster
         public void Update<T>(T entity) where T : class
         {
             DbSet<T> entities = _dbContext.Set<T>();
-            _dbContext.Entry(entities).State = EntityState.Added;
+           //_dbContext.Sa
         }
-
-        //public T Get(long id)
-        //{
-        //    DbSet<T> entities = _dbContext.Set<T>();
-        //    return entities.Find(id);
-        //}
-
-
     }
 }

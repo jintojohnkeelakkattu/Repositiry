@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JobMaster.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180701155728_JobPortal-v1")]
-    partial class JobPortalv1
+    [Migration("20180703055649_NewMigration")]
+    partial class NewMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
